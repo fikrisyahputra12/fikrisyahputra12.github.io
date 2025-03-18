@@ -4,112 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Digital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #E5E7EB;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #137c3a;
-            padding: 15px 30px;
-            color: white;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 600;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: background 0.3s ease-in-out;
-        }
-        .navbar a:hover {
-            background-color: #FACC15;
-            color: #111827;
-        }
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-        }
-        .title {
-            color: #137c3a;
-            text-align: center;
-            font-size: 24px;
-            font-weight: 600;
-        }
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        .info-table th, .info-table td {
-            border: 1px solid #137c3a;
-            padding: 10px;
-            text-align: left;
-        }
-        .info-table th {
-            background-color: #137c3a;
-            color: white;
-        }
-        .footer {
-            background-color: #137c3a;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 50px;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="navbar">
-        <div class="logo">Perpustakaan Digital</div>
-        <div>
-            <a href="index.html" >Homepage</a>
-            <a href="About.html" >About Us</a>
-            <a href="contact.html" >Contact Us</a>
-        </div>
-    </div>
-    <div class="container">
-        <h2 class="title">Tentang Kami</h2>
-        <p>Perpustakaan Fikri Syahputra adalah perpustakaan digital, sebuah inovasi yang memberikan kemudahan bagi siapa saja untuk mengakses koleksi buku, jurnal, dan referensi ilmiah secara online tanpa batasan ruang dan waktu. Dengan hadirnya perpustakaan digital, pembelajaran dan literasi dapat menjadi lebih inklusif dan efisien.</p>
-        <h3>Informasi Pribadi</h3>
-        <table class="info-table">
-            <tr>
-                <th>Nama</th>
-                <td>Fikri Syahputra</td>
+<body class="bg-gray-200 font-sans">
+    <header class="bg-green-700 text-white p-6 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Perpustakaan Digital</h1>
+        <nav>
+            <a href="index.html" class="text-white px-3 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded transition">Home</a>
+            <a href="About.html" class="text-white px-3 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded transition">About Us</a>
+            <a href="contact.html" class="text-white px-3 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded transition">Contact Us</a>
+        </nav>
+    </header>
+    <main class="max-w-3xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-center text-2xl font-semibold text-green-700 mb-4">Tentang Kami</h2>
+        <p class="text-gray-700 leading-relaxed">Perpustakaan Fikri Syahputra adalah perpustakaan digital, sebuah inovasi yang memberikan kemudahan bagi siapa saja untuk mengakses koleksi buku, jurnal, dan referensi ilmiah secara online tanpa batasan ruang dan waktu. Dengan hadirnya perpustakaan digital, pembelajaran dan literasi dapat menjadi lebih inklusif dan efisien.</p>
+        <h3 class="text-lg font-semibold text-green-700 mt-4">Informasi Pribadi</h3>
+        <table class="w-full border-collapse mt-4">
+            <tr class="bg-green-700 text-white">
+                <th class="border border-green-700 px-4 py-2">Nama</th>
+                <td class="border border-green-700 px-4 py-2">Fikri Syahputra</td>
             </tr>
             <tr>
-                <th>NIM</th>
-                <td>230504XXX</td>
+                <th class="border border-green-700 px-4 py-2">NIM</th>
+                <td class="border border-green-700 px-4 py-2">220709013</td>
+            </tr>
+            <tr class="bg-green-100">
+                <th class="border border-green-700 px-4 py-2">Program Studi</th>
+                <td class="border border-green-700 px-4 py-2">Perpustakaan dan Sains Informasi</td>
             </tr>
             <tr>
-                <th>Program Studi</th>
-                <td>Perpustakaan dan Sains Informasi</td>
+                <th class="border border-green-700 px-4 py-2">Fakultas</th>
+                <td class="border border-green-700 px-4 py-2">Fakultas Ilmu Budaya</td>
+            </tr>
+            <tr class="bg-green-100">
+                <th class="border border-green-700 px-4 py-2">Semester</th>
+                <td class="border border-green-700 px-4 py-2">6</td>
             </tr>
             <tr>
-                <th>Fakultas</th>
-                <td>Fakultas Ilmu Budaya</td>
-            </tr>
-            <tr>
-                <th>Semester</th>
-                <td>6</td>
-            </tr>
-            <tr>
-                <th>Tahun Ajaran</th>
-                <td>Genap 2024/2025</td>
+                <th class="border border-green-700 px-4 py-2">Tahun Ajaran</th>
+                <td class="border border-green-700 px-4 py-2">Genap 2024/2025</td>
             </tr>
         </table>
-    </div>
-    <div class="footer">© 2025 Perpustakaan Fikri Syahputra</div>
+    </main>
+    <footer class="bg-green-700 text-white text-center py-4 mt-10">
+        &copy; 2025 Perpustakaan Fikri Syahputra
+    </footer>
 </body>
 </html>
+
