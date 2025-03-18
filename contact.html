@@ -11,6 +11,21 @@
             margin: 0;
             padding: 0;
         }
+        header, footer {
+            background-color: #15803d;
+            color: white;
+            padding: 15px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
         nav a {
             color: white;
             text-decoration: none;
@@ -39,7 +54,7 @@
             display: block;
             margin-top: 10px;
         }
-        input, textarea, select {
+        input, textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
@@ -59,17 +74,23 @@
         button:hover {
             background-color: #0f5f2d;
         }
+        footer {
+            text-align: center;
+            position: relative;
+            padding: 15px;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
 
-<header class="bg-green-700 text-white p-6 flex justify-between items-center">
-     <h1 class="text-2xl font-bold">Perpustakaan Digital</h1>
-        <nav>
-            <a href="index.html" class="text-white px-3 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded transition">Homepage</a>
-            <a href="About.html" class="text-white px-3 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded transition">About Us</a>
-            <a href="contact.html" class="text-white px-3 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded transition">Contact Us</a>
-        </nav>
+<header>
+    <h1>Perpustakaan Digital</h1>
+    <nav>
+        <a href="index.html">Homepage</a>
+        <a href="About.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
 </header>
 
 <div class="container">
@@ -80,32 +101,23 @@
         <label>Email:</label>
         <input type="email" required>
         
-        <label>Subjek Pesan:</label>
-        <select required>
-            <option value="">-- Pilih Subjek --</option>
-            <option value="Pertanyaan">Pertanyaan</option>
-            <option value="Saran">Saran</option>
-            <option value="Keluhan">Keluhan</option>
-        </select>
+        <label>Alamat:</label>
+        <input type="text" required>
+        
+        <label>Subjek:</label>
+        <input type="text" required>
         
         <label>Pesan:</label>
         <textarea rows="4" required></textarea>
         
-        <label>Metode Kontak yang Diinginkan:</label>
-        <select required>
-            <option value="">-- Pilih Metode --</option>
-            <option value="Email">Email</option>
-            <option value="Telepon">Telepon</option>
-            <option value="WhatsApp">WhatsApp</option>
-        </select>
-        
         <button type="submit">Kirim Pesan</button>
     </form>
 </div>
-
-<footer class="bg-green-700 text-white text-center py-4 mt-10">
+<br>
+<footer>
     &copy; 2025 Perpustakaan Digital Fikri Syahputra
 </footer>
 
 </body>
 </html>
+
