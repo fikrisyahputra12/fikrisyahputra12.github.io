@@ -95,42 +95,5 @@
 <footer>
     &copy; 2025 Perpustakaan Digital Fikri Syahputra
 </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchBox = document.getElementById('searchBox');
-            const suggestionsBox = document.getElementById('suggestions');
-
-            searchBox.addEventListener('input', function() {
-                const input = this.value;
-                if (input.length > 0) {
-                    const items = ['Buku Sejarah', 'Buku Fisika', 'Buku Matematika', 'Buku Biologi', 'Buku Sastra'];
-                    const filteredItems = items.filter(item => item.toLowerCase().startsWith(input.toLowerCase()));
-
-                    suggestionsBox.innerHTML = filteredItems
-                        .map(item => `<div class="suggestion-item">${item}</div>`)
-                        .join('');
-
-                    suggestionsBox.style.display = 'block';
-
-                    // Tambahkan event listener ke setiap item hasil pencarian
-                    document.querySelectorAll('.suggestion-item').forEach(function(item) {
-                        item.addEventListener('click', function() {
-                            searchBox.value = item.textContent;
-                            suggestionsBox.style.display = 'none';
-                        });
-                    });
-                } else {
-                    suggestionsBox.style.display = 'none';
-                }
-            });
-
-            // Sembunyikan dropdown saat klik di luar
-            document.addEventListener('click', function(event) {
-                if (!searchBox.contains(event.target) && !suggestionsBox.contains(event.target)) {
-                    suggestionsBox.style.display = 'none';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
