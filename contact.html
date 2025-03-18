@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200 font-sans">
+    <header class="bg-green-700 text-white p-6 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Perpustakaan Digital</h1>
+        <nav>
+            <a href="index.html" class="text-white px-3 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded transition">Homepage</a>
+            <a href="About.html" class="text-white px-3 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded transition">About Us</a>
+            <a href="contact.html" class="text-white px-3 py-2 hover:bg-yellow-400 hover:text-gray-900 rounded transition">Contact Us</a>
+        </nav>
+    </header>
+    <main class="max-w-3xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+            <h2 class="text-xl font-semibold text-blue-900"> <a href="#" class="text-blue-600 font-bold underline">Hubungi Kami</a></h2>
+            <p class="text-gray-700 mt-2">Kami ingin mendengar dari Anda! Jika Anda memiliki pertanyaan, saran, atau ingin mengetahui lebih lanjut tentang layanan kami, jangan ragu untuk menghubungi kami.</p>
+            
+            <form action="#" method="POST" class="mt-4">
+                <label class="block text-gray-700 font-medium">Email:</label>
+                <input type="email" class="w-full p-2 border border-gray-300 rounded mt-1" required>
+                
+                <label class="block text-gray-700 font-medium mt-3">No. HP:</label>
+                <input type="text" class="w-full p-2 border border-gray-300 rounded mt-1" required>
+                
+                <label class="block text-gray-700 font-medium mt-3">Pesan:</label>
+                <textarea class="w-full p-2 border border-gray-300 rounded mt-1 h-24" required></textarea>
+                
+                <button type="submit" class="bg-teal-800 text-white px-4 py-2 rounded mt-4 hover:bg-teal-600">Kirim Pesan</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-teal-800 text-white text-center p-4 mt-8">
+        &copy; 2025 Perpustakaan Digital
+    </footer>
+</body>
+</html>
