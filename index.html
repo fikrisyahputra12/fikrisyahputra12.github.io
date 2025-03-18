@@ -70,6 +70,35 @@
             background-color: #facc15;
             color: black;
         }
+                }
+        /* Dark Mode Styles */
+        .dark-mode {
+            background-color: #333;
+            color: white;
+        }
+        .dark-mode .container {
+            background-color: #444;
+            color: white;
+        }
+        .dark-mode header, .dark-mode footer {
+            background-color: #0a5025;
+        }
+        /* Dark Mode Button */
+        #darkModeToggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #15803d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #darkModeToggle:hover {
+            background-color: #0a5025;
+        }
     </style>
 </head>
 <body>
@@ -95,5 +124,17 @@
 <footer>
     &copy; 2025 Perpustakaan Digital Fikri Syahputra
 </footer>
+    <button id="darkModeToggle">Dark Mode</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+        });
+    });
+</script>
 </body>
 </html>
