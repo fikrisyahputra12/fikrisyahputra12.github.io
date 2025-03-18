@@ -4,31 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Fikri Syahputra</title>
-        <Script>
-document.getElementById('searchBox').addEventListener('input', function() {
-    const input = this.value;
-    const suggestionsBox = document.getElementById('suggestions');
-
-    if (input.length > 0) {
-        const items = ['Apple', 'Banana', 'Cherry', 'Date', 'Grape'];
-        const filteredItems = items.filter(item => item.toLowerCase().startsWith(input.toLowerCase()));
-
-        suggestionsBox.innerHTML = filteredItems.map(item => <div class="suggestion-item">${item}</div>).join('');
-        suggestionsBox.style.display = 'block';
-
-        // Add click event to each suggestion
-        document.querySelectorAll('.suggestion-item').forEach(function(item) {
-            item.addEventListener('click', function() {
-                document.getElementById('searchBox').value = item.textContent;
-                suggestionsBox.style.display = 'none';
-            });
-        });
-    } else {
-        suggestionsBox.style.display = 'none';
-    }
-});
-
-</Script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -117,7 +92,43 @@ document.getElementById('searchBox').addEventListener('input', function() {
         <a href="https://library.usu.ac.id/" target="_blank">Kunjungi Perpustakaan USU</a>
     </div>
 </div>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchBox = document.getElementById('searchBox');
+            const suggestionsBox = document.getElementById('suggestions');
 
+            searchBox.addEventListener('input', function() {
+                const input = this.value;
+                if (input.length > 0) {
+                    const items = ['Buku Sejarah', 'Buku Fisika', 'Buku Matematika', 'Buku Biologi', 'Buku Sastra'];
+                    const filteredItems = items.filter(item => item.toLowerCase().startsWith(input.toLowerCase()));
+
+                    suggestionsBox.innerHTML = filteredItems
+                        .map(item => `<div class="suggestion-item">${item}</div>`)
+                        .join('');
+
+                    suggestionsBox.style.display = 'block';
+
+                    // Tambahkan event listener ke setiap item hasil pencarian
+                    document.querySelectorAll('.suggestion-item').forEach(function(item) {
+                        item.addEventListener('click', function() {
+                            searchBox.value = item.textContent;
+                            suggestionsBox.style.display = 'none';
+                        });
+                    });
+                } else {
+                    suggestionsBox.style.display = 'none';
+                }
+            });
+
+            // Sembunyikan dropdown saat klik di luar
+            document.addEventListener('click', function(event) {
+                if (!searchBox.contains(event.target) && !suggestionsBox.contains(event.target)) {
+                    suggestionsBox.style.display = 'none';
+                }
+            });
+        });
+    </script>
 <footer>
     &copy; 2025 Perpustakaan Digital Fikri Syahputra
 </footer>
