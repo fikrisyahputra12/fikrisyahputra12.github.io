@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Event | Perpustakaan Fikri Syahputra</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .navbar {
+        background-color: #198754;
+      }
+
+      .navbar-brand {
+        font-weight: 600;
+        transition: transform 0.3s ease;
+      }
+
+      .navbar-brand:hover {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        color: #fff !important;
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: #facc15;
+        left: 0;
+        bottom: -3px;
+        transition: 0.3s;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #16a34a, #4ade80);
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+      }
+
+      .event-card {
+        border: none;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .event-card:hover {
+        transform: scale(1.03);
+      }
+
+      .event-card img {
+        height: 200px;
+        object-fit: cover;
+      }
+
+      footer {
+        background-color: #198754;
+        color: white;
+        text-align: center;
+        padding: 1.5rem;
+        position: relative;
+      }
+
+      .btn-darkmode {
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
+        background-color: #facc15;
+        color: #000;
+        font-weight: 500;
+        border-radius: 999px;
+        padding: 0.5rem 1rem;
+        transition: 0.3s;
+      }
+
+      .btn-darkmode:hover {
+        background-color: #eab308;
+      }
+
+      body.dark-mode {
+        background-color: #121212;
+        color: #e0e0e0;
+      }
+
+      .dark-mode .navbar,
+      .dark-mode footer {
+        background-color: #1f2937 !important;
+      }
+
+      .dark-mode .card {
+        background-color: #2c2c2c;
+        color: #e0e0e0;
+      }
+
+      .dark-mode .btn-darkmode {
+        background-color: #f59e0b;
+        color: #000;
+      }
+
+      .dark-mode .nav-link {
+        color: #f3f4f6 !important;
+      }
+
+      .dark-mode .hero {
+        background: linear-gradient(135deg, #0f766e, #1e40af);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark navbar-glass shadow-sm sticky-top"
+      data-aos="fade-down"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="bi bi-journal-bookmark-fill me-1"></i> Perpustakaan Digital
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"
+                ><i class="bi bi-house"></i> Beranda</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="buku.html"
+                ><i class="bi bi-info-circle"></i> Buku</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="event.html"
+                ><i class="bi bi-info-circle"></i> Event</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="About.html"
+                ><i class="bi bi-info-circle"></i> Tentang</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html"
+                ><i class="bi bi-envelope"></i> Kontak</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Homework.html">
+                <i class="bi bi-journal-text"></i> Homework</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" data-aos="fade-up">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Event & Kegiatan</h1>
+        <p class="lead">
+          Ikuti berbagai event menarik seputar dunia literasi dan teknologi!
+        </p>
+      </div>
+    </section>
+
+    <!-- Event Cards -->
+    <div class="container my-5">
+      <div class="row g-4">
+        <!-- Event 1 -->
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card event-card">
+            <img src="https://picsum.photos/id/1011/600/300" alt="Event 1" />
+            <div class="card-body">
+              <h5 class="card-title">Webinar Literasi Digital</h5>
+              <p>
+                Pelajari cara cerdas menggunakan internet sebagai sumber
+                belajar.
+              </p>
+              <p><i class="bi bi-calendar-event me-1"></i> 25 Mei 2025</p>
+              <a href="#" class="btn btn-success w-100">Daftar Sekarang</a>
+            </div>
+          </div>
+        </div>
+        <!-- Event 2 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card event-card">
+            <img src="https://picsum.photos/id/1025/600/300" alt="Event 2" />
+            <div class="card-body">
+              <h5 class="card-title">Pelatihan Dasar HTML & CSS</h5>
+              <p>
+                Belajar membuat tampilan website dengan kode HTML dan CSS dasar.
+              </p>
+              <p><i class="bi bi-calendar-event me-1"></i> 1 Juni 2025</p>
+              <a href="#" class="btn btn-success w-100">Daftar Sekarang</a>
+            </div>
+          </div>
+        </div>
+        <!-- Event 3 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card event-card">
+            <img src="https://picsum.photos/id/1044/600/300" alt="Event 3" />
+            <div class="card-body">
+              <h5 class="card-title">Diskusi Buku: “Atomic Habits”</h5>
+              <p>
+                Bersama komunitas membaca membedah buku pengembangan diri
+                populer.
+              </p>
+              <p><i class="bi bi-calendar-event me-1"></i> 10 Juni 2025</p>
+              <a href="#" class="btn btn-success w-100">Gabung Sekarang</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div>&copy; 2025 Perpustakaan Digital Fikri Syahputra</div>
+      <button id="darkModeToggle" class="btn btn-darkmode">
+        <i class="bi bi-moon-stars-fill"></i> Mode Gelap
+      </button>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      document
+        .getElementById("darkModeToggle")
+        .addEventListener("click", () => {
+          document.body.classList.toggle("dark-mode");
+        });
+    </script>
+  </body>
+</html>

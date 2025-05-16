@@ -88,6 +88,7 @@
         100% {
           transform: translateY(0);
         }
+
         50% {
           transform: translateY(-20px);
         }
@@ -147,6 +148,7 @@
       }
     </style>
   </head>
+
   <body>
     <!-- Navbar -->
     <nav
@@ -170,6 +172,16 @@
             <li class="nav-item">
               <a class="nav-link" href="index.html"
                 ><i class="bi bi-house"></i> Beranda</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="buku.html"
+                ><i class="bi bi-info-circle"></i> Buku</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="event.html"
+                ><i class="bi bi-info-circle"></i> Event</a
               >
             </li>
             <li class="nav-item">
@@ -244,24 +256,51 @@
         >
           Formulir Kontak
         </h2>
-        <form>
+
+        <!-- Notifikasi pesan berhasil -->
+        <div
+          id="notif"
+          class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4"
+          style="display: none"
+        >
+          Pesan berhasil dikirim!
+        </div>
+
+        <!-- Formulir Kontak -->
+        <form id="contactForm">
           <div class="mb-3">
             <label for="name" class="form-label">Nama Lengkap</label>
-            <input type="text" class="form-control" id="name" required />
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              id="name"
+              required
+            />
           </div>
+
           <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" required />
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              id="email"
+              required
+            />
           </div>
+
           <div class="mb-3">
             <label for="message" class="form-label">Pesan</label>
             <textarea
+              name="message"
               class="form-control"
               id="message"
               rows="4"
               required
             ></textarea>
           </div>
+
           <div class="text-center mt-4">
             <button type="submit" class="btn btn-success btn-lg">
               Kirim Pesan
@@ -292,6 +331,46 @@
           document.body.classList.toggle("dark-mode");
         });
       });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Mencegah reload halaman setelah form disubmit
+
+          const formData = new FormData(this);
+
+          fetch("https://formsubmit.co/ajax/fikrisyahputra671@gmail.com", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+            },
+            body: formData,
+          })
+            .then((response) => {
+              if (response.ok) {
+                // Tampilkan notifikasi sukses
+                document.getElementById("notif").style.display = "block";
+                setTimeout(() => {
+                  document.getElementById("notif").style.display = "none";
+                }, 4000); // Menyembunyikan notifikasi setelah 4 detik
+
+                // Reset form setelah pengiriman
+                document.getElementById("contactForm").reset();
+              } else {
+                throw new Error("Gagal mengirim.");
+              }
+            })
+            .catch((error) => {
+              Swal.fire({
+                icon: "error",
+                title: "Oops!",
+                text: "Terjadi kesalahan saat mengirim pesan.",
+                confirmButtonColor: "#dc3545",
+              });
+            });
+        });
     </script>
   </body>
 </html>
